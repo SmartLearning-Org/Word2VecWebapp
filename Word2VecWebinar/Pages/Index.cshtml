@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input asp-for="WordModel.Negative1" />
+        is to
+        <input asp-for="WordModel.Positive1" />
+        as
+        <input asp-for="WordModel.Positive2" />
+        is to @(Model == null || Model.WordModel.Result == null ? "..." : Model.WordModel.Result)
+        <input type="submit" value="Complete" class="btn btn-primary" />
+
+    </form>
+</div>
